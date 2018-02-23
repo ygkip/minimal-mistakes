@@ -27,16 +27,79 @@
   {% endif %}
 
   <div class="author__content">
+
     {% if author.home %}
       <a href="{{ author_link }}"><h3 class="author__name" itemprop="name">{{ author.name }}</h3></a>
     {% else %}
       <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
     {% endif %}
+
+
+
+<p class="author__bio" itemprop="description"><i>
+    {% if author.bname %}{{ author.bname }}{% endif %}{% if author.bname2 %}, {{ author.bname2 }}{% endif %}{% if author.mname %}, {{ author.mname }}{% endif %}{% if author.mname2 %}, {{ author.mname2 }}{% endif %}{% if author.dname %}, {{ author.dname }}{% endif %}{% if author.dname2 %}, {{ author.dname2 }}{% endif %}{% if author.post1 %}, {{ author.post1 }}{% endif %}{% if author.post2 %}, {{ author.post2 }}{% endif %}{% if author.post3 %}, {{ author.post3 }}{% endif %} </i>
+     </p>
+
     {% if author.bio %}
+    <b>
       <p class="author__bio" itemprop="description">
-        {{ author.bio }}
-      </p>
+    {% if author.honour1 %}
+         {{ author.honour1 }} <br />
     {% endif %}
+    {% if author.honour2 %}
+         {{ author.honour2 }} <br />
+    {% endif %}
+    {% if author.honour3 %}
+         {{ author.honour3 }} <br />
+    {% endif %}
+         {{ author.bio }}
+
+    </b> </p>
+    {% endif %}
+
+
+     <p class="author__bio" itemprop="description">	
+    {% if author.dept %}
+         {{ author.dept }}
+    {% endif %}
+    {% if author.dbld %}
+         <br /> {{ author.dbld }}
+    {% endif %}
+    {% if author.institution %}
+         <br /> {{ author.institution }}
+    {% endif %}
+    {% if author.daddress1 %}
+         <br /> {{ author.daddress1 }}
+    {% endif %}
+    {% if author.daddress2 %}
+         <br /> {{ author.daddress2 }}
+    {% endif %}
+    {% if author.dnation %}
+         <br /> {{ author.dnation }}
+    {% endif %}
+    </p>
+
+    <p class="author__bio" itemprop="description">
+
+    {% if author.office %}
+         <br /><b>{{ site.data.ui-text[site.locale].office_label | default: "office" }}: </b>{{ author.office }}
+    {% endif %}
+    {% if author.ophone %}
+         <br /><b>{{ site.data.ui-text[site.locale].phone_label | default: "phone" }}: </b>{{ author.ophone }}
+    {% endif %}
+    {% if author.mphone %}
+         <br /><b>{{ site.data.ui-text[site.locale].mobile_label | default: "mobile" }}: </b>{{ author.mphone }}
+    {% endif %}
+    {% if author.fax %}
+         <br /><b>{{ site.data.ui-text[site.locale].fax_label | default: "fax" }}: </b>{{ author.fax }}
+    {% endif %}
+    {% if author.email %}
+         <br /><b>{{ site.data.ui-text[site.locale].emailme_label | default: "email" }}: </b>{{ author.email }}
+    {% endif %}
+      </p>
+
+
+
   </div>
 
   <div class="author__urls-wrapper">
@@ -56,6 +119,14 @@
         </li>
       {% endif %}
 
+      {% if author.vitae %}
+        <li>
+          <a href="{{ author.vitae }}" itemprop="sameAs">
+            <i class="fas fa-fw fa-file" aria-hidden="true"></i> vitae
+          </a>
+        </li>
+      {% endif %}
+<!-- 
       {% if author.email %}
         <li>
           <a href="mailto:{{ author.email }}">
@@ -64,35 +135,97 @@
           </a>
         </li>
       {% endif %}
+ -->
+<!-- Academic -->
 
-      {% if author.keybase %}
+
+      {% if author.gscholar %}
         <li>
-          <a href="https://keybase.io/{{ author.keybase }}" itemprop="sameAs">
-            <i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase
+          <a href="https://scholar.google.ca/citations?user={{ author.gscholar }}" itemprop="sameAs">
+            <i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar
           </a>
         </li>
       {% endif %}
 
-      {% if author.twitter %}
+      {% if author.orcid %}
         <li>
-          <a href="https://twitter.com/{{ author.twitter }}" itemprop="sameAs">
-            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          <a href="https://orcid.org/{{ author.orcid }}" itemprop="sameAs">
+            <i class="ai ai-orcid" aria-hidden="true"></i> ORCID
           </a>
         </li>
       {% endif %}
 
-      {% if author.facebook %}
+      {% if author.researchgate %}
         <li>
-          <a href="https://www.facebook.com/{{ author.facebook }}" itemprop="sameAs">
-            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          <a href="https://www.researchgate.net/profile/{{ author.researchgate }}" itemprop="sameAs">
+            <i class="ai ai-researchgate" aria-hidden="true"></i> ResearchGate
+          </a>
+        </li>
+      {% endif %}
+ 
+     {% if author.repec %}
+        <li>
+          <a href="https://ideas.repec.org/{{ author.repec }}.html" itemprop="sameAs">
+            <i class="far fa-fw fa-lightbulb" aria-hidden="true"></i> IDEAS @ RePEc
           </a>
         </li>
       {% endif %}
 
-      {% if author.google_plus %}
+      {% if author.pubmed %}
         <li>
-          <a href="https://plus.google.com/{{ author.google_plus }}" itemprop="sameAs">
-            <i class="fab fa-fw fa-google-plus-square" aria-hidden="true"></i> Google+
+          <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{ author.pubmed }}[Author]" itemprop="sameAs">
+            <i class="ai ai-pubmed" aria-hidden="true"></i> PubMed
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.arxiv %}
+        <li>
+          <a href="https://arxiv.org/a/warner_s_1/{{ author.researchgate }}.html" itemprop="sameAs">
+            <i class="ai ai-arxiv" aria-hidden="true"></i> arXiv
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.biorxiv %}
+        <li>
+          <a href="https://www.biorxiv.org/search/{{ author.biorxiv }}" itemprop="sameAs">
+            <i class="ai ai-biorxiv" aria-hidden="true"></i> bioRxiv
+          </a>
+        </li>
+      {% endif %}
+
+
+      {% if author.figshare %}
+        <li>
+          <a href="https://figshare.com/authors/{{ author.figshare }}" itemprop="sameAs">
+            <i class="ai ai-figshare" aria-hidden="true"></i> figshare
+          </a>
+        </li>
+      {% endif %}
+
+
+      {% if author.scirate %}
+        <li>
+          <a href="https://www.scirate.com/{{ author.scirate }}" itemprop="sameAs">
+            <i class="ai ai-scirate" aria-hidden="true"></i> SciRate
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.springer %}
+        <li>
+          <a href="https://link.springer.com/search?facet-creator={{ author.springer }}" itemprop="sameAs">
+            <i class="ai ai-springer" aria-hidden="true"></i> springer
+          </a>
+        </li>
+      {% endif %}
+
+
+      {% if author.voxeu %}
+        <li>
+          <a href="https://voxeu.org/users/{{ author.voxeu }}" itemprop="sameAs">
+            <i class="fas fa-fw fa-university" aria-hidden="true"></i> VOXeu
           </a>
         </li>
       {% endif %}
@@ -104,6 +237,111 @@
           </a>
         </li>
       {% endif %}
+
+      {% if author.academia %}
+        <li>
+          <a href="https://{{ author.ainstitution }}.academia.edu/{{ author.academia }}" itemprop="sameAs">
+            <i class="ai ai-academia-square" aria-hidden="true"></i> Academia.edu
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.github %}
+        <li>
+          <a href="https://github.com/{{ author.github }}" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.gitlab %}
+        <li>
+          <a href="https://gitlab.com/{{ author.gitlab }}" itemprop="sameAs">
+            <i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.depsy %}
+        <li>
+          <a href="http://depsy.org/person/{{ author.depsy }}" itemprop="sameAs">
+            <i class="ai ai-depsy" aria-hidden="true"></i> depsy
+          </a>
+        </li>
+      {% endif %}
+
+
+<!-- Frequent Social -->
+
+      {% if author.twitter %}
+        <li>
+          <a href="https://twitter.com/{{ author.twitter }}" itemprop="sameAs">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.youtube %}
+        {% if author.youtube contains "://" %}
+          <li>
+            <a href="{{ author.youtube }}" itemprop="sameAs">
+              <i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        {% else author.youtube %}
+          <li>
+            <a href="https://www.youtube.com/user/{{ author.youtube }}" itemprop="sameAs">
+              <i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        {% endif %}
+      {% endif %}
+
+      {% if author.facebook %}
+        <li>
+          <a href="https://www.facebook.com/{{ author.facebook }}" itemprop="sameAs">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.quora %}
+        <li>
+          <a href="https://www.quora.com/profile/{{ author.quora }}" itemprop="sameAs">
+            <i class="fab fa-fw fa-quora" aria-hidden="true"></i> Quora
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.wikipedia %}
+        <li>
+          <a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}" itemprop="sameAs">
+            <i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia
+          </a>
+        </li>
+      {% endif %}
+
+<!-- Other Social -->
+
+      {% if author.google_plus %}
+        <li>
+          <a href="https://plus.google.com/{{ author.google_plus }}" itemprop="sameAs">
+            <i class="fab fa-fw fa-google-plus-square" aria-hidden="true"></i> Google+
+          </a>
+        </li>
+      {% endif %}
+
+
+
+      {% if author.keybase %}
+        <li>
+          <a href="https://keybase.io/{{ author.keybase }}" itemprop="sameAs">
+            <i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase
+          </a>
+        </li>
+      {% endif %}
+
+
 
       {% if author.xing %}
         <li>
@@ -137,21 +375,6 @@
         </li>
       {% endif %}
 
-      {% if author.github %}
-        <li>
-          <a href="https://github.com/{{ author.github }}" itemprop="sameAs">
-            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.gitlab %}
-        <li>
-          <a href="https://gitlab.com/{{ author.gitlab }}" itemprop="sameAs">
-            <i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab
-          </a>
-        </li>
-      {% endif %}
 
       {% if author.stackoverflow %}
         <li>
@@ -185,6 +408,7 @@
         </li>
       {% endif %}
 
+
       {% if author.foursquare %}
         <li>
           <a href="https://foursquare.com/{{ author.foursquare }}" itemprop="sameAs">
@@ -201,21 +425,6 @@
         </li>
       {% endif %}
 
-      {% if author.youtube %}
-        {% if author.youtube contains "://" %}
-          <li>
-            <a href="{{ author.youtube }}" itemprop="sameAs">
-              <i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube
-            </a>
-          </li>
-        {% else author.youtube %}
-          <li>
-            <a href="https://www.youtube.com/user/{{ author.youtube }}" itemprop="sameAs">
-              <i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube
-            </a>
-          </li>
-        {% endif %}
-      {% endif %}
 
       {% if author.soundcloud %}
         <li>
