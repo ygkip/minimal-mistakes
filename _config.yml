@@ -5,19 +5,19 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
-title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+title                    : "Kipouros.ca"
+title_separator          : "|"
+name                     : "Georges J. Kipouros"
+description              : "Professor Emeritus"
+url                      : "http://kipouros.ca"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-# breadcrumbs            : false # true, false (default)
+breadcrumbs           	 : # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
@@ -90,36 +90,110 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
-  uri              :
+# Basic
+  name             : "Georges J. Kipouros"
+  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Professor Emeritus" # Job title
+  location         : 
+  email            : "georges@kipouros.ca"
+  uri              : 
+  vitae            : "http://cv.kipouros.ca"
   home             : # null (default), "absolute or relative url to link to author home"
+# Institutional Info 
+  honour1	   : "Fellow CAE, Fellow CIM" # Chairs, fellowships etc
+  honour2          : "Fellow JSPS"	
+  honour3          : "CIM Distinguished Lecturer"
+  dept		   : "Department of Chemical and Biological Engineering" # Your department
+  institution      : "University of Saskatchewan" # University / Institution
+  ophone           : "905.582.3787" # office phone
+  mphone           : "306.361.3155" # mobile phone
+  fax		   :  
+  office	   : "220 Animal Science Building" # your office location and number
+  dbld		   :  # department building
+  daddress1	   : "57 Campus Drive" # department street address "8993 Yonge St"
+  daddress2	   : "Saskatoon, SK, S7N 5A9" # department city and postal code "Beverley Hills, 90210"
+  dnation	   : "Canada" # country your department is located in
+# social media
   bitbucket        :
   codepen          :
   dribbble         :
-  flickr           :
-  facebook         :
+  flickr           : 
+  facebook         : 
   foursquare       :
-  github           :
+  github           : 
   gitlab           :
   google_plus      :
-  keybase          :
-  instagram        :
+  keybase          : 
+  instagram        : 
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "georges-j-kipouros-009599a" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
+  quora            : 
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
-  vine             :
-  weibo            :
+  twitter          : "george_kipouros" 
+  vine             : 
+  weibo            : 
+  wikipedia        : 
   xing             :
   youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+# Academic Sites
+  gscholar         : "0cUckLcAAAAJ" # https://scholar.google.ca/citations?user="this"
+  researchgate 	   : "G_Kipouros"
+  academia         : "GeorgesKipouros" # "https://asdasd.academia.edu/this"
+  ainstitution     : "usask" # instiution of your academia page "https://this.academia.edu/asdasd"
+  arxiv            : # "https://arxiv.org/a/this.html
+  biorxiv          : # "https://www.biorxiv.org/search/this"
+  depsy            : 
+  figshare         : # "https://figshare.com/authors/this/andthat"
+  orcid            : # "https://orcid.org/this"
+  pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=THIS[Author]"
+  scopus           : # "https://www.scopus.com/authid/detail.uri?authorId=this"
+  scirate          : # "https://scirate.com/this"
+  springer         : # "https://link.springer.com/search?facet-creator=this"
+  repec            : # "https://ideas.repec.org/f/pha999.html" copy f/pha999
+  voxeu            : # "https://voxeu.org/users/this"
+# Other Info
+ # Undergraduate
+  bachelors 	   : "National Technical University of Athens, Athens, Greece" # First Bachelor's Degree (location)
+  bsubject	   : "Mining and Metallurgical Engineering, School of Chemical Engineering" # Subject Studied in First Degree 
+  bdate            : # Year First Bachelor's Degree recieved
+  bname	           : "D.Eng." # Postnomial of First Bachelor's (BA? B.A.? B.Eng? BSci)
+  bextra	   :
+  bachelors2 	   : # Second Bachelor's Degree (location)
+  bsubject2	   : # Subject Studied in Second Degree 
+  bdate            : # Year Second Bachelor's Degree recieved
+  bname2           : # Postnomial of Second Bachelor's (BA? B.A.? B.Eng? BSci)
+  bextra2	   :
+ # Master's
+  masters 	   : "University of Toronto, Toronto, Ontario, Canada" # First Master's Degree (location)
+  msubject	   : "Metallurgy and Materials Science" # Subject Studied in First Degree 
+  mdate            : # Year First Master's Degree recieved
+  mname	           : "M.A.Sc." # Postnomial of First Master's (MA?)
+  mextra	   :
+  masters2 	   : # Second Master's Degree (location)
+  msubject2	   : # Subject Studied in Master Degree 
+  mdate            : # Year Second Master's Degree recieved
+  mname2           : # Postnomial of Second Master's (MAppSci?)
+  mextra2	   :
+ # Doctorate
+  doctorate 	   : "University of Toronto, Toronto, Ontario, Canada" # First Doctorate Degree (location)
+  dsubject	   : "Metallurgy and Materials Science" # Subject Studied in First Degree 
+  ddate            : # Year First Doctorate's Degree recieved
+  dname	           : "Ph.D." # Postnomial of First Doctorate (Phd?)
+  dextra	   :
+  doctorate2 	   : # Second Doctorate Degree (location)
+  dsubject2	   : # Subject Studied in Second Degree 
+  ddate            : # Year Second Doctorate Degree recieved
+  dname2           : # Postnomial of Second Doctorate (Phd?)
+  dextra2	   :
+# Non Degree
+  post1 	   : # Non Degree Postnomial
+  post2 	   : 
+  post3      	   :
+
 
 
 # Reading Files
@@ -254,8 +328,9 @@ defaults:
       type: posts
     values:
       layout: single
+      classes: wide
       author_profile: true
       read_time: true
-      comments: # true
+      comments: false
       share: true
       related: true
