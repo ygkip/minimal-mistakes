@@ -143,10 +143,11 @@
 
 .author__name {
   margin: 0;
+  display: inline-block;
 
   @include breakpoint($large) {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 }
 .sidebar .author__name {
@@ -156,10 +157,10 @@
 
 .author__bio {
   margin: 0;
-
+  display: inline-block;
   @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 }
 
