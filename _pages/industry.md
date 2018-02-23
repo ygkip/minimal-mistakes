@@ -18,6 +18,7 @@ Louisville, Kentucky, U.S.A.
 |The use of alternative admixtures in blast furnace iron desulfurizers used for industrial hot metal treatment processes.|
 
 ### 4/89–present - Carbide Industries PLC
+
 |Various consulting research activities.|
 
 ### 9/00–8/13 - Director, Minerals Engineering Centre
